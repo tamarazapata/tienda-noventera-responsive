@@ -1,0 +1,235 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.grid-container{
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: auto;
+    border: 1px solid black;
+    grid-template-areas: 
+    "menu"
+    "filter"
+    "seccion-principal"
+    "footer";
+    height: 100vh;
+}
+
+nav{
+    padding: 10px;
+    background-color: rgb(154, 154, 233); 
+    color: rgb(250, 250, 250);
+    grid-area: menu;
+    
+}
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 0 1rem;
+}
+
+nav ul{
+    float: right;
+    margin-right: 2rem;
+    
+}
+
+nav ul li{
+    display: none;
+
+}
+
+nav ul li a{
+    color: rgb(255, 255, 255);
+    font-size: large;
+    text-transform: capitalize;
+    text-decoration: none;
+    
+}
+
+a:hover{
+    background-color: #af4ca7;
+    transition: .5s;
+
+}
+
+.filters{
+    display: flex;
+    grid-area: filter;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0.8rem;
+    background-color:  #af4ca7;
+    color: aliceblue;
+}
+
+.filters p{
+    font-size: x-large;
+
+}
+
+.checkbtn{
+    color: white;
+    float: right;
+    font-size: xx-large;
+}
+
+#check{
+    display: none;
+}
+.categories h2{
+    color: #22023e;
+    font-weight: bold;
+}
+main{
+    grid-area: seccion-principal;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+
+}  
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: #af4ca7;
+    color: white;
+}
+
+pagination a:hover:not(.active) {
+    background-color: #d0cccc;
+}
+
+footer{
+    background-color: #22023e;
+    color: white;
+    padding: 10px;
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+footer .socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: large;
+    gap: 1rem;
+}
+
+footer .text{
+    text-align: center;
+}
+.btn-group{
+    width: 90%;
+    padding: 1.2rem;
+}
+
+section{
+    background-image: url(./assets/img/fondo-geometrico.jpg);
+    background-repeat: repeat;
+}
+
+
+
+.container-section{
+    background-color: #ddd;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto ;
+    gap: 1rem;
+
+}
+
+.card{
+    background-color: rgb(243, 239, 247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card button{
+    border-radius: 5%;
+    margin: 1rem;
+    padding: 0.5rem;
+    color: rgb(255, 255, 255);
+    background-color: rgb(230, 44, 224);
+}
+.card img{
+    margin-top: 1rem;
+    max-width: fit-content;
+    align-items: center;
+    width: 25%;
+}
+.card-title{
+    font-size: large;
+    font-style: bold;
+    margin: 0.3rem;  
+}
+
+.card-price{
+    font-size: medium;
+    font-style: italic;
+    color: rgb(51, 6, 93);
+    margin: 0.2rem;  
+}
+
+
+/* ESTILO PARA PANTALLAS GRANDES*/
+@media screen and (min-width: 992px){
+    .grid-container {
+        grid-template-areas: 
+        "menu filter"
+        "menu seccion-principal"
+        "menu seccion-principal"
+        "footer seccion-principal";
+        grid-template-columns: 1fr 10fr;
+        grid-template-rows: auto;
+        max-height: 12vh;
+    }
+    .container-section{
+        background-color: #ddd;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 1.5rem;
+        overflow-y: auto; /* Cambiado de scroll a auto */
+        max-height: 70vh; /* Ajusta este valor según sea necesario */
+        height: 100%;
+    }
+    .checkbtn{
+        display: none;
+    }
+    nav ul li{
+        display: inline-block;
+        padding: 0.5rem;
+    
+    }
+    nav{
+        min-width: 40vh;
+    }
+    
+    footer i{
+        padding: 10px
+    }
+
+
+} 
+
